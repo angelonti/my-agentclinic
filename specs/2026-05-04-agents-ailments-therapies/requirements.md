@@ -1,0 +1,48 @@
+# Requirements — Agents, Ailments & Therapies
+
+## Scope
+
+This branch covers the first half of Phase 2: the three core data models and their UI.
+
+### In scope
+
+**Agents**
+- Data model: `id`, `name`, `modelType`, `originSystem`
+- Pages: list all agents, agent detail, create agent, edit agent
+- Delete action from detail page
+
+**Ailments**
+- Data model: `id`, `name`, `description`, `severity`
+- Page: browse all ailments (read-only in this phase)
+
+**Therapies**
+- Data model: `id`, `name`, `description`, `duration`
+- Page: browse all therapies (read-only in this phase)
+
+### Out of scope (later phases)
+
+- Appointments and booking flow
+- Staff member model and dashboard
+- Linking ailments to therapies (association table)
+- Authentication or access control
+
+---
+
+## Decisions
+
+| Decision | Choice | Reason |
+|---|---|---|
+| Database driver | `better-sqlite3` (raw SQL) | Minimal abstraction; synchronous API fits Next.js Route Handlers simply |
+| Schema migrations | Hand-written SQL run at startup | No migration tooling overhead for a small, dev-only database |
+| Data access | Thin module per model (`lib/db/agents.ts`, etc.) exporting typed functions | Keeps SQL colocated with its model; easy to test with Vitest |
+| Routing | Next.js App Router with React Server Components for reads | Fast page loads; mutations go through Route Handlers (`/api/...`) |
+| Styling | PicoCSS | Semantic HTML-first styling; minimal class noise; built-in responsive layout |
+
+---
+
+## Context
+
+- Phase 1 delivered the responsive shell (header, nav, home page) with no real data. Note: Phase 1 used Tailwind CSS; this phase migrates styling to PicoCSS.
+- This phase introduces the database and the first user-visible data flows.
+- The schema and `lib/db` conventions established here will be reused by appointments and staff in the next branch.
+- Target audience includes conference demo attendees, so pages must look polished and load quickly even with an empty database.

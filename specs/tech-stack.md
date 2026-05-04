@@ -17,7 +17,7 @@ We use **Next.js** (App Router) as our full-stack framework.
 ## Frontend
 
 - **React** (via Next.js) for component-based UI
-- **Tailwind CSS** for utility-first styling with mobile-first responsive breakpoints (`sm`, `md`, `lg`)
+- **PicoCSS** for minimal, semantic HTML styling with built-in responsive layout
 
 ## Backend
 
