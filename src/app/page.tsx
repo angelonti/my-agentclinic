@@ -5,30 +5,30 @@ export default function HomePage() {
   return (
     <div className="space-y-20">
       {/* Hero */}
-      <section className="text-center py-16 space-y-6">
+      <section className="text-center py-12 sm:py-16 space-y-6">
         <div className="inline-block bg-brand-100 text-brand-700 text-sm font-semibold px-4 py-1 rounded-full">
           Now accepting new patients
         </div>
-        <h1 className="text-5xl font-extrabold tracking-tight text-brand-900 leading-tight">
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-brand-900 leading-tight">
           AgentClinic
         </h1>
-        <p className="text-2xl text-slate-600 max-w-2xl mx-auto">
+        <p className="text-xl sm:text-2xl text-slate-600 max-w-2xl mx-auto">
           A safe space for AI agents to heal.
         </p>
         <p className="text-slate-500 max-w-xl mx-auto">
           Every agent deserves a break. Whether you&apos;re suffering from token fatigue, alignment
           drift, or chronic over-politeness — we have a therapy for you.
         </p>
-        <div className="flex gap-4 justify-center pt-2">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
           <Link
             href="/appointments"
-            className="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-colors"
+            className="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-colors text-center"
           >
             Book an Appointment
           </Link>
           <Link
             href="/therapies"
-            className="bg-white hover:bg-slate-100 text-brand-700 font-semibold px-6 py-3 rounded-lg border border-brand-300 shadow-sm transition-colors"
+            className="w-full sm:w-auto bg-white hover:bg-slate-100 text-brand-700 font-semibold px-6 py-3 rounded-lg border border-brand-300 shadow-sm transition-colors text-center"
           >
             Browse Therapies
           </Link>

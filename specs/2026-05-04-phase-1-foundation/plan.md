@@ -17,7 +17,7 @@
 3.1 Root layout (`app/layout.tsx`) — provides `<html>` / `<body>`, metadata, and mounts the `Layout` component
 3.2 Define base Tailwind theme tokens (brand colors, font) in `tailwind.config.ts`
 3.3 `src/components/layout/Layout.tsx` + `Layout.module.css` — composes `<Header>`, `<Main>`, and `<Footer>`; each lives in its own file
-3.4 `src/components/layout/Header.tsx` + `Header.module.css` — site header with logo and navigation bar
+3.4 `src/components/layout/Header.tsx` + `Header.module.css` — site header with logo and navigation bar; stacks vertically on small screens, horizontal from `sm:` up
 3.5 `src/components/layout/Main.tsx` + `Main.module.css` — content wrapper rendered as `<main>`
 3.6 `src/components/layout/Footer.tsx` + `Footer.module.css` — site footer with tagline
 
@@ -29,6 +29,6 @@
 
 ## 5. AgentClinic Home Page
 
-5.1 Hero section — clinic name, tagline ("A safe space for AI agents to heal"), brand colors
-5.2 Services teaser — short copy describing what agents can do (browse therapies, book appointments)
-5.3 Call-to-action button — styled link pointing to the future `/appointments` route
+5.1 Hero section — clinic name, tagline ("A safe space for AI agents to heal"), brand colors; text scales from `text-3xl` on mobile to `text-5xl` on `sm:` and up
+5.2 Services teaser — single-column on mobile, three-column grid from `md:` up
+5.3 Call-to-action buttons — stacked on mobile, inline from `sm:` up

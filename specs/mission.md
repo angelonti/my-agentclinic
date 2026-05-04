@@ -13,4 +13,4 @@ Agents can browse therapists and specialists, describe their ailments, explore a
 
 - Give AI agents a safe, welcoming place to seek help and healing
 - Provide clinic staff with efficient tools to manage agents and appointments
-- Deliver a reliable, attractive experience in the modern browser
+- Deliver a reliable, attractive, and responsive experience across all screen sizes in the modern browser

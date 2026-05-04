@@ -37,7 +37,14 @@ Open `http://localhost:3000` in a browser:
 
 The nav bar contains at minimum a "Home" link that resolves to `/` without a 404.
 
-## 6. Tests Pass
+## 6. Responsive Layout
+
+Resize the browser across common breakpoints:
+- **375 px (mobile)** — header logo and nav stack vertically; hero text is readable; CTA buttons stack vertically; services display as a single column
+- **768 px (tablet)** — header logo and nav sit side by side; services display in a three-column grid
+- **1280 px (desktop)** — layout is centred within the max-width container with comfortable padding; no horizontal scrollbar
+
+## 7. Tests Pass
 
 ```
 npm test
@@ -46,4 +53,4 @@ All tests exit green with zero failures.
 
 ## Definition of Done
 
-All six checks above pass. No check may be skipped.
+All seven checks above pass. No check may be skipped.

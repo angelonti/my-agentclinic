@@ -6,7 +6,7 @@ Phases are intentionally small and shippable. Each phase adds visible, working f
 
 - Initialize Next.js project with TypeScript and Tailwind CSS
 - Configure SQLite database connection
-- Basic layout: header, navigation, placeholder home page
+- Mobile-first responsive shell: header, navigation, home page
 
 ## Phase 2 — Agent Profiles
 
