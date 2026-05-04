@@ -29,6 +29,11 @@ We use **Next.js** (App Router) as our full-stack framework.
 - **SQLite** via a lightweight ORM (e.g. Drizzle or better-sqlite3)
 - Simple to run locally; no external services required
 
+## Testing
+
+- **Vitest** for unit and validation tests
+- Run with `npm test`
+
 ## Tooling
 
 - `tsc` / Next.js build pipeline

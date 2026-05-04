@@ -21,8 +21,14 @@
 3.5 `src/components/layout/Main.tsx` + `Main.module.css` — content wrapper rendered as `<main>`
 3.6 `src/components/layout/Footer.tsx` + `Footer.module.css` — site footer with tagline
 
-## 4. AgentClinic Home Page
+## 4. Testing
 
-4.1 Hero section — clinic name, tagline ("A safe space for AI agents to heal"), brand colors
-4.2 Services teaser — short copy describing what agents can do (browse therapies, book appointments)
-4.3 Call-to-action button — styled link pointing to the future `/appointments` route
+4.1 Install Vitest and add `"test": "vitest"` script to `package.json`
+4.2 Create `vitest.config.ts` — configure `environment: 'node'` and resolve the `@/` path alias
+4.3 Create `src/__tests__/smoke.test.ts` — one passing test to verify the suite boots
+
+## 5. AgentClinic Home Page
+
+5.1 Hero section — clinic name, tagline ("A safe space for AI agents to heal"), brand colors
+5.2 Services teaser — short copy describing what agents can do (browse therapies, book appointments)
+5.3 Call-to-action button — styled link pointing to the future `/appointments` route

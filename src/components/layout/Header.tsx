@@ -1,12 +1,6 @@
 import Link from 'next/link';
 import styles from './Header.module.css';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/agents', label: 'Agents' },
-  { href: '/therapies', label: 'Therapies' },
-  { href: '/appointments', label: 'Appointments' },
-];
+import { navLinks } from '@/lib/navigation';
 
 export default function Header() {
   return (

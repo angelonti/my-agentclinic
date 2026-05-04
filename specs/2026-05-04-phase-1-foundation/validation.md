@@ -37,6 +37,13 @@ Open `http://localhost:3000` in a browser:
 
 The nav bar contains at minimum a "Home" link that resolves to `/` without a 404.
 
+## 6. Tests Pass
+
+```
+npm test
+```
+All tests exit green with zero failures.
+
 ## Definition of Done
 
-All five checks above pass. No check may be skipped.
+All six checks above pass. No check may be skipped.
