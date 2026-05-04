@@ -2,7 +2,7 @@
 
 Phases are intentionally small and shippable. Each phase adds visible, working functionality.
 
-## Phase 1 — Foundation
+## Phase 1 — Foundation ✓
 
 - Initialize Next.js project with TypeScript and Tailwind CSS
 - Configure SQLite database connection

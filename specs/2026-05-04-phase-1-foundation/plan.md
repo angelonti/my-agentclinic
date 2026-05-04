@@ -14,8 +14,12 @@
 
 ## 3. Shell UI
 
-3.1 Root layout (`app/layout.tsx`) with persistent header and navigation bar
+3.1 Root layout (`app/layout.tsx`) — provides `<html>` / `<body>`, metadata, and mounts the `Layout` component
 3.2 Define base Tailwind theme tokens (brand colors, font) in `tailwind.config.ts`
+3.3 `src/components/layout/Layout.tsx` + `Layout.module.css` — composes `<Header>`, `<Main>`, and `<Footer>`; each lives in its own file
+3.4 `src/components/layout/Header.tsx` + `Header.module.css` — site header with logo and navigation bar
+3.5 `src/components/layout/Main.tsx` + `Main.module.css` — content wrapper rendered as `<main>`
+3.6 `src/components/layout/Footer.tsx` + `Footer.module.css` — site footer with tagline
 
 ## 4. AgentClinic Home Page
 
