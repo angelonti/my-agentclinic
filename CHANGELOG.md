@@ -12,6 +12,7 @@
 - Implement Phase 2: agents, ailments, therapies with PicoCSS
 - Address review findings: validation, consistency, and test cleanup
 - Update roadmap to reflect phase 2 split
+- Add plan, requirements, and validation documents for MVP Phase 2b and Phase 3
 
 ## 2026-04-29
 
