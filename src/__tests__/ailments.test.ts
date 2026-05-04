@@ -1,15 +1,4 @@
-import { vi, beforeAll, afterEach, describe, it, expect } from 'vitest';
-
-vi.mock('@/db/client', async () => {
-  const { createClient } = await import('@libsql/client');
-  const { drizzle } = await import('drizzle-orm/libsql');
-  const client = createClient({ url: ':memory:' });
-  const db = drizzle(client);
-  return { db, client };
-});
-
-vi.mock('@/db/setup', () => ({ ready: Promise.resolve() }));
-
+import { beforeAll, afterEach, describe, it, expect } from 'vitest';
 import { migrate } from '@/lib/db/migrate';
 import { listAilments, getAilment } from '@/lib/db/ailments';
 import { db } from '@/db/client';

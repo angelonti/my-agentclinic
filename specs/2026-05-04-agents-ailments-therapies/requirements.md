@@ -32,10 +32,10 @@ This branch covers the first half of Phase 2: the three core data models and the
 
 | Decision | Choice | Reason |
 |---|---|---|
-| Database driver | `better-sqlite3` (raw SQL) | Minimal abstraction; synchronous API fits Next.js Route Handlers simply |
-| Schema migrations | Hand-written SQL run at startup | No migration tooling overhead for a small, dev-only database |
-| Data access | Thin module per model (`lib/db/agents.ts`, etc.) exporting typed functions | Keeps SQL colocated with its model; easy to test with Vitest |
-| Routing | Next.js App Router with React Server Components for reads | Fast page loads; mutations go through Route Handlers (`/api/...`) |
+| Database driver | `@libsql/client` + Drizzle ORM | Already present in the project; async API compatible with App Router; type-safe queries |
+| Schema migrations | Hand-written SQL via `client.execute()` at startup | No migration tooling overhead for a small, dev-only database |
+| Data access | Thin module per model (`lib/db/agents.ts`, etc.) exporting typed functions | Keeps queries colocated with their model; easy to unit-test with Vitest mocks |
+| Routing | Next.js App Router with Server Components for reads, Server Actions for mutations | Fast page loads; no client JS required for forms |
 | Styling | PicoCSS | Semantic HTML-first styling; minimal class noise; built-in responsive layout |
 
 ---

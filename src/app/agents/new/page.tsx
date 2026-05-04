@@ -5,15 +5,18 @@ import { createAgent } from '@/lib/db/agents';
 export default function NewAgentPage() {
   async function createAgentAction(formData: FormData) {
     'use server';
-    const name = formData.get('name') as string;
-    const modelType = formData.get('modelType') as string;
-    const originSystem = formData.get('originSystem') as string;
-    await createAgent({ name, modelType, originSystem });
+    const name = formData.get('name');
+    const modelType = formData.get('modelType');
+    const originSystem = formData.get('originSystem');
+    if (typeof name !== 'string' || typeof modelType !== 'string' || typeof originSystem !== 'string') {
+      return;
+    }
+    await createAgent({ name: name.trim(), modelType: modelType.trim(), originSystem: originSystem.trim() });
     redirect('/agents');
   }
 
   return (
-    <article style={{ maxWidth: '40rem', margin: '0 auto' }}>
+    <article className="card-centered">
       <header>
         <h1>Register Agent</h1>
       </header>
@@ -30,7 +33,7 @@ export default function NewAgentPage() {
           Origin System
           <input name="originSystem" required placeholder="e.g. Anthropic" />
         </label>
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <div className="button-group">
           <button type="submit">Register</button>
           <Link href="/agents" role="button" className="secondary outline">
             Cancel

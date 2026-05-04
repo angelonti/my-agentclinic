@@ -6,3 +6,43 @@ main.container {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+/* Layout helpers */
+.spread {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card-centered {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.inline-form {
+  display: inline;
+}
+
+/* Section styles */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+}
+
+.section-heading {
+  text-align: center;
+}
+
+.card-icon {
+  font-size: 2rem;
+}

@@ -9,8 +9,16 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const body = await request.json();
-  const { name, modelType, originSystem } = body;
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
+  }
+  const b = body as Record<string, unknown>;
+  const name = typeof b.name === 'string' ? b.name.trim() : '';
+  const modelType = typeof b.modelType === 'string' ? b.modelType.trim() : '';
+  const originSystem = typeof b.originSystem === 'string' ? b.originSystem.trim() : '';
   if (!name || !modelType || !originSystem) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }

@@ -19,7 +19,7 @@ export default async function AilmentsPage() {
           {ailments.map((ailment) => (
             <article key={ailment.id}>
               <header>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div className="spread">
                   <strong>{ailment.name}</strong>
                   <mark>{severityLabel[ailment.severity]}</mark>
                 </div>

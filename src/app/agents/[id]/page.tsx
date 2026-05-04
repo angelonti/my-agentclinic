@@ -3,7 +3,8 @@ import { notFound, redirect } from 'next/navigation';
 import { getAgent, deleteAgent } from '@/lib/db/agents';
 
 export default async function AgentDetailPage({ params }: { params: { id: string } }) {
-  const id = parseInt(params.id);
+  const id = parseInt(params.id, 10);
+  if (isNaN(id)) notFound();
   const agent = await getAgent(id);
   if (!agent) notFound();
 
@@ -14,7 +15,7 @@ export default async function AgentDetailPage({ params }: { params: { id: string
   }
 
   return (
-    <article style={{ maxWidth: '40rem', margin: '0 auto' }}>
+    <article className="card-centered">
       <header>
         <h1>{agent.name}</h1>
         <p>
@@ -31,11 +32,11 @@ export default async function AgentDetailPage({ params }: { params: { id: string
         <dd>{agent.originSystem}</dd>
       </dl>
 
-      <footer style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+      <footer className="button-group">
         <Link href={`/agents/${agent.id}/edit`} role="button" className="secondary">
           Edit
         </Link>
-        <form action={deleteAgentAction} style={{ display: 'inline' }}>
+        <form action={deleteAgentAction} className="inline-form">
           <button type="submit" className="contrast">
             Delete
           </button>

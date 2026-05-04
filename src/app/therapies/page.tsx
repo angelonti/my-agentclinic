@@ -17,7 +17,7 @@ export default async function TherapiesPage() {
           {therapies.map((therapy) => (
             <article key={therapy.id}>
               <header>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div className="spread">
                   <strong>{therapy.name}</strong>
                   <small>{therapy.duration} min</small>
                 </div>

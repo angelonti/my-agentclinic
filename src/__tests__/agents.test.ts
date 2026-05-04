@@ -1,15 +1,4 @@
-import { vi, beforeAll, afterEach, describe, it, expect } from 'vitest';
-
-vi.mock('@/db/client', async () => {
-  const { createClient } = await import('@libsql/client');
-  const { drizzle } = await import('drizzle-orm/libsql');
-  const client = createClient({ url: ':memory:' });
-  const db = drizzle(client);
-  return { db, client };
-});
-
-vi.mock('@/db/setup', () => ({ ready: Promise.resolve() }));
-
+import { beforeAll, afterEach, describe, it, expect } from 'vitest';
 import { migrate } from '@/lib/db/migrate';
 import { listAgents, getAgent, createAgent, updateAgent, deleteAgent } from '@/lib/db/agents';
 import { client } from '@/db/client';
@@ -57,11 +46,19 @@ describe('createAgent', () => {
 });
 
 describe('updateAgent', () => {
-  it('updates agent fields', async () => {
+  it('updates a single field, leaving others unchanged', async () => {
     const agent = await createAgent({ name: 'Old', modelType: 'LLM', originSystem: 'X' });
     const updated = await updateAgent(agent.id, { name: 'New' });
     expect(updated?.name).toBe('New');
     expect(updated?.modelType).toBe('LLM');
+    expect(updated?.originSystem).toBe('X');
+  });
+
+  it('updates multiple fields at once', async () => {
+    const agent = await createAgent({ name: 'Old', modelType: 'LLM', originSystem: 'X' });
+    const updated = await updateAgent(agent.id, { name: 'New', modelType: 'SLM' });
+    expect(updated?.name).toBe('New');
+    expect(updated?.modelType).toBe('SLM');
   });
 
   it('returns undefined for non-existent id', async () => {

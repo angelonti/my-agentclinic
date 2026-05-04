@@ -8,7 +8,7 @@ export default async function AgentsPage() {
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="spread">
         <h1>Agents</h1>
         <Link href="/agents/new" role="button">
           Register Agent
