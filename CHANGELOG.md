@@ -7,6 +7,11 @@
 - Refactor shell UI into Header/Main/Footer subcomponents with CSS Modules
 - Add initial configuration files and layout for the AgentClinic application
 - Add foundational planning, requirements, and validation documents for Phase 1
+- Add changelog and consolidate roadmap phases
+- Add Phase 2 spec for agents, ailments, and therapies; switch to PicoCSS
+- Implement Phase 2: agents, ailments, therapies with PicoCSS
+- Address review findings: validation, consistency, and test cleanup
+- Update roadmap to reflect phase 2 split
 
 ## 2026-04-29
 
