@@ -8,10 +8,18 @@ Phases are intentionally small and shippable. Each phase adds visible, working f
 - Configure SQLite database connection
 - Mobile-first responsive shell: header, navigation, home page
 
-## Phase 2 — Core Features
+## Phase 2a — Agents, Ailments & Therapies ✓
 
-- Agent data model (name, model type, origin system); list, detail, create / edit pages
-- Ailment data model (name, description, severity) and therapy data model (name, description, duration); UI to browse ailments and available therapies
+- Migrated frontend styling from Tailwind CSS to PicoCSS
+- Agent data model (name, model type, origin system); list, detail, create / edit / delete pages
+- Ailment data model (name, description, severity); browse page
+- Therapy data model (name, description, duration); browse page
+- LibSQL + Drizzle ORM setup with startup migration and seed data
+- REST API routes for all three models
+- 29 Vitest unit tests covering the data layer
+
+## Phase 2b — Appointments & Staff
+
 - Appointment data model (agent, therapy, staff member, datetime, status); booking flow with confirmation and cancellation
 - Staff member data model; dashboard view with upcoming appointments, agent list, quick actions, and appointment status management
 
