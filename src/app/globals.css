@@ -1,9 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --pico-font-family-sans-serif: Inter, system-ui, sans-serif;
+}
 
-@layer base {
-  body {
-    @apply bg-slate-50 text-slate-900;
-  }
+main.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }

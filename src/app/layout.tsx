@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '@picocss/pico/css/pico.min.css';
 import './globals.css';
 import Layout from '@/components/layout/Layout';
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body>
         <Layout>{children}</Layout>
       </body>

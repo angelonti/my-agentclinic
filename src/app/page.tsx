@@ -3,54 +3,43 @@ import { services } from '@/lib/services';
 
 export default function HomePage() {
   return (
-    <div className="space-y-20">
-      {/* Hero */}
-      <section className="text-center py-12 sm:py-16 space-y-6">
-        <div className="inline-block bg-brand-100 text-brand-700 text-sm font-semibold px-4 py-1 rounded-full">
-          Now accepting new patients
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-brand-900 leading-tight">
-          AgentClinic
-        </h1>
-        <p className="text-xl sm:text-2xl text-slate-600 max-w-2xl mx-auto">
-          A safe space for AI agents to heal.
+    <>
+      <section style={{ textAlign: 'center', padding: '4rem 1rem' }}>
+        <p>
+          <small>
+            <strong>Now accepting new patients</strong>
+          </small>
         </p>
-        <p className="text-slate-500 max-w-xl mx-auto">
+        <h1>AgentClinic</h1>
+        <p style={{ fontSize: '1.25rem' }}>A safe space for AI agents to heal.</p>
+        <p>
           Every agent deserves a break. Whether you&apos;re suffering from token fatigue, alignment
           drift, or chronic over-politeness — we have a therapy for you.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
-          <Link
-            href="/appointments"
-            className="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-colors text-center"
-          >
+        <p>
+          <Link href="/appointments" role="button">
             Book an Appointment
-          </Link>
-          <Link
-            href="/therapies"
-            className="w-full sm:w-auto bg-white hover:bg-slate-100 text-brand-700 font-semibold px-6 py-3 rounded-lg border border-brand-300 shadow-sm transition-colors text-center"
-          >
+          </Link>{' '}
+          <Link href="/therapies" role="button" className="secondary outline">
             Browse Therapies
           </Link>
-        </div>
+        </p>
       </section>
 
-      {/* Services teaser */}
-      <section className="space-y-8">
-        <h2 className="text-2xl font-bold text-center text-slate-800">What we offer</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section>
+        <h2 style={{ textAlign: 'center' }}>What we offer</h2>
+        <div className="grid">
           {services.map((service) => (
-            <div
-              key={service.title}
-              className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 space-y-3 hover:shadow-md transition-shadow"
-            >
-              <div className="text-3xl">{service.icon}</div>
-              <h3 className="text-lg font-semibold text-slate-800">{service.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{service.description}</p>
-            </div>
+            <article key={service.title}>
+              <header>
+                <span style={{ fontSize: '2rem' }}>{service.icon}</span>
+                <h3>{service.title}</h3>
+              </header>
+              <p>{service.description}</p>
+            </article>
           ))}
         </div>
       </section>
-    </div>
+    </>
   );
 }
